@@ -1,0 +1,53 @@
+.container{
+    margin-bottom: 50px;
+    .title{
+        padding: 30px;
+        color: var(--white);
+    }
+    .header{
+        &_info{
+            text-align: center;
+            p{
+                display: inline-block;
+                color: var(--grey);
+                padding: 5px;
+                margin: 0;
+            }
+        }
+        &_buttons{
+            text-align: center;
+            button{
+                margin: 5px 10px;
+                border-radius: 50%;
+                border: 2px solid var(--white);
+            }
+        }
+    }
+    .subContainer{
+        &-col{
+            padding: 0;
+        }
+        .card{
+            background: var(--grey);
+            margin: 10px;
+            border-radius: 20px;
+            &-header{
+                color: var(--dark);
+            }
+            &-body{
+                p{
+                    padding: 5px;
+                    margin: 0;
+                    color: var(--grayBlue);
+                }
+            }
+            &-img{
+                border: 4px solid var(--darkBlue);
+                border-radius: 50%;
+                margin: 10px;
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+}

@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --darkBlue: hsl( 233, 26%, 24% );
+    --dark: hsl( 231, 68%, 6% );
+    --grayBlue: hsl( 233, 8%, 62% );
+    --white: hsl( 0, 0%, 100% );
+    --grey: hsl( 220, 16%, 96% );
+}
+
+body{
+    background: var(--dark);
+}

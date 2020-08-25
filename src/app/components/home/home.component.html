@@ -1,0 +1,47 @@
+<div class="container">
+    
+    <h1 class="text-center title">Rick and Morty</h1>
+    <section class="header">
+        <div class="row" *ngIf="info">
+            <div class="col-sm-12 col-md-6 header_info">
+                <p>Characters: {{ info.count }}</p>
+                <p>Characters per page: {{ info.pages }}</p>
+                <p>Page: {{ number }}</p>
+            </div>
+            <div class="col-sm-12 col-md-6 header_buttons">
+                <button class="btn btn-dark" [disabled]="info.prev === null" (click)="pagePrev()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="btn btn-dark" [disabled]="info.next === null" (click)="pageNext()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="subContainer">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 subContainer-col" *ngFor="let character of characters">
+                <div class="card">
+                    <div class="card-header">{{ character.name }}</div>
+                    <div class="media card_body">
+                        <img class="card-img" [src]="character.imagen">
+                        <div class="media-body">
+                            <p>Character : {{ character.id }}</p>
+                            <p>Name : {{ character.name }}</p>
+                            <p [ngSwitch]="character.status" > Live :
+                                <span class="badge badge-success" *ngSwitchCase="'Alive'">{{ character.status }}</span>
+                                <span class="badge badge-danger" *ngSwitchCase="'Dead'">{{ character.status }}</span>
+                                <span class="badge badge-dark" *ngSwitchDefault>{{ character.status }}</span>
+                            </p>
+                            <p>Specie: {{ character.species }}</p>
+                            <p>Gander: {{ character.gender }}</p>
+                            <p>Created: <small> {{ character.created }} </small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
